@@ -1,7 +1,9 @@
-<!-- SPDX-FileCopyrightText: Copyright (c) 2017-2022 slowtec GmbH <post@slowtec.de> -->
+<!-- SPDX-FileCopyrightText: Copyright (c) 2023-2024 Felix Richter <ju6ge@felixrichter.tech> -->
 <!-- SPDX-License-Identifier: MIT OR Apache-2.0 -->
 
-# tokio-modbus
+# tokio-modbus (PCE modbus)
+
+This version of tokio-modbus was modified to be compatible with PCE instruments implementation of modbus which does not follow the modbus spec 🙈.
 
 A pure [Rust](https://www.rust-lang.org)
 [Modbus](https://en.wikipedia.org/wiki/Modbus) library

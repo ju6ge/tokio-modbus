@@ -358,7 +358,7 @@ impl TryFrom<Bytes> for ResponsePdu {
 
     fn try_from(bytes: Bytes) -> Result<Self, Self::Error> {
         let fn_code = Cursor::new(&bytes).read_u8()?;
-        let pdu = if fn_code < 0x80 {
+        let pdu = if fn_code < 0x80 || fn_code == 0xfe {
             Response::try_from(bytes)?.into()
         } else {
             ExceptionResponse::try_from(bytes)?.into()
