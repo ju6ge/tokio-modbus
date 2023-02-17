@@ -179,6 +179,11 @@ fn get_response_pdu_len(adu_buf: &BytesMut) -> Result<Option<usize>> {
                         // pdu is byte length without addr and crc => 3 + 4 = 7
                         7
                     },
+                    0x0703 => {
+                        // expected response format |addr|fn_code|0x07|0x03|0xXX|crc|
+                        // pdu is byte length without addr and crc => 3 + 1 = 4
+                        4
+                    }
                     0x0704 => {
                         // expected response format |addr|fn_code|0x07|0x04|0xXX|0xXX|0xXX|0xXX|64*0xAA|crc|
                         // pdu is byte length without addr and crc => 64+4+3 = 71
